@@ -11,6 +11,7 @@ public class Controller implements KeyListener {
     }
     @Override
     public void keyPressed(KeyEvent e) {
+        System.out.println("OOOO");
         switch (e.getKeyCode()) {
             case KeyEvent.VK_W:
                 System.out.println("WW");

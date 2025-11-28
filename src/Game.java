@@ -67,9 +67,7 @@ public class Game extends JPanel {
         this.requestFocus();
 
         this.addKeyListener(new Controller(this.player, this));
-
-
-        this.setVisible(false);
+       // this.setVisible(false);         // פההההה פה
         exit.addActionListener(e -> {
             this.setVisible(false);
             running = false;
@@ -77,6 +75,8 @@ public class Game extends JPanel {
             resetGame();
         });
     }
+
+    // hello my name is beni
     public boolean collision(Rectangle player, Rectangle enemy) {
         return player.intersects(enemy);
     }

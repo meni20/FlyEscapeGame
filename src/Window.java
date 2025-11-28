@@ -25,7 +25,6 @@ public class Window extends JFrame {
         });
 
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setVisible(true);
         this.setResizable(false);
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         this.setLayout(null);
@@ -34,6 +33,7 @@ public class Window extends JFrame {
         this.add(menu);
         this.add(startButton);
         this.add(menuButton);
+        this.setVisible(true);
     }
     public void startbuttonVisible(){
         startButton.setVisible(!game.isVisible());
