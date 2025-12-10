@@ -11,14 +11,11 @@ public class Controller implements KeyListener {
     }
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("OOOO");
         switch (e.getKeyCode()) {
             case KeyEvent.VK_W:
-                System.out.println("WW");
                 this.player.moveUp();
                 break;
             case KeyEvent.VK_S:
-                System.out.println("sss");
                 this.player.moveDown();
                 break;
         }

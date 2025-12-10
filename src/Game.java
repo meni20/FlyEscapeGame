@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 //hello
 public class Game extends JPanel {
@@ -67,16 +68,13 @@ public class Game extends JPanel {
         this.requestFocus();
 
         this.addKeyListener(new Controller(this.player, this));
-       // this.setVisible(false);         // פההההה פה
         exit.addActionListener(e -> {
-            this.setVisible(false);
+           // this.setVisible(false);
             running = false;
-
             resetGame();
         });
     }
 
-    // hello my name is beni
     public boolean collision(Rectangle player, Rectangle enemy) {
         return player.intersects(enemy);
     }
@@ -116,8 +114,13 @@ public class Game extends JPanel {
             this.enemies.add(enemy);
         }
         this.player = new Player(200, 100, 20, 20);
+        for (KeyListener kl : this.getKeyListeners())
+            this.removeKeyListener(kl);
+
+        this.addKeyListener(new Controller(this.player, this));
+
         this.enemiesPassed = 0;
-        this.setVisible(false);
+         this.setVisible(false);
         window.startbuttonVisible();
     }
     public void paintComponent(Graphics graphics) {
